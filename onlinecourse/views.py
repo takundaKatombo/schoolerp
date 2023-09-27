@@ -92,6 +92,7 @@ class CourseDetailView(generic.DetailView):
 def enroll(request, course_id):
     course = get_object_or_404(Course, pk=course_id)
     user = request.user
+    #TODO: add course payment logic 
 
     is_enrolled = check_if_enrolled(user, course)
     if not is_enrolled and user.is_authenticated:
@@ -102,7 +103,18 @@ def enroll(request, course_id):
 
     return HttpResponseRedirect(reverse(viewname='onlinecourse:course_details', args=(course.id,)))
 
-
+#Add Push Notification View and Logic
+#User Profile view (update peersonal infor, view achievements and certificate available to share and for download )
+#Instructor Profile (Update personal infor and view achievements)
+#Certificate of completion view(PDF)
+#Social Sharing View
+#FeedbackView
+#Rating view
+#Progress Tracking view
+#Add discussion forum
+#Interactive  quizzes
+#Video Lessons
+#User Dashboard (personalized view, progress tracking and completion modules)
 # <HINT> Create a submit view to create an exam submission record for a course enrollment,
 # you may implement it based on following logic:
          # Get user and course object, then get the associated enrollment object created when the user enrolled the course
