@@ -1,6 +1,6 @@
 
 **General Notes**
-Django backend for school erp frontend sample 
+Django backend for school erp frontend 
 
 
 
